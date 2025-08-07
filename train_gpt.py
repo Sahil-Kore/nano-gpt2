@@ -365,7 +365,7 @@ grad_accum_steps=total_batch_size//(B*T)
 print(f"Total desire batch size: {total_batch_size}")
 print(f"=> calculated gradient accumulation steps: {grad_accum_steps}")
 
-torch.set_float32_matmul_precision("high")
+torch.set_float32_matmul_precision("high")  
 model=GPT(GPTconfig(vocab_size=50304))
 model.to(device)
 optimizer=torch.optim.Adam(model.parameters(),lr=3e-4)
